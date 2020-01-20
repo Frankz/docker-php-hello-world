@@ -6,6 +6,7 @@ services:
     #build: .
     ports:
       - "80:8080"
+      - "443:8443"
         #volumes:
         #- .src/public_html:/var/www/html
         #- .apache2:/etc/apache2
@@ -14,6 +15,7 @@ services:
         #    depends_on:
         #- db
         #command: "php -S 0.0.0.0:8080 -t /var/www/html" 
+    restart: unless-stopped
     logging:
       driver: "json-file"
       options:
